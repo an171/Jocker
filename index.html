@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="less/style.css" />
+    <link rel="stylesheet" type="text/js" href="js/main.js" />
+
+
+
+
+    <script src='libs/wow.min.js'></script>
+    <script>
+        new WOW().init();
+    </script>
+    <title>Site with React and JQuery etc.</title>
+</head>
+
+<body>
+    <header>
+        <div class='headerTop'>
+            <div class='logo'><img id='logo' src='img/dasha2.jpg'></div>
+            <div class='navbar1'>
+                <div>
+                    <p>DARIA</p>
+                </div>
+                <div class='lang'>
+                    <a class='eng' href='#'>Eng</a> <a class='cz' href='#'>Cz </a>
+                </div>
+            </div>
+            <nav class='navbar2'>
+                <div class='nav_f'>
+                    <a href='#'>
+                        <li>About</li>
+                    </a>
+                    <a href='#'>
+                        <li>Family</li>
+                    </a>
+                    <a href='#'>
+                        <li>School</li>
+                    </a>
+                    <a href='#'>
+                        <li>Music</li>
+                    </a>
+                    <a href='#'>
+                        <li>Art</li>
+                    </a>
+                    <a href='#'>
+                        <li>Travel</li>
+                    </a>
+                </div>
+                <div class="links">
+                    <a href='#'>Home</a>
+                    <a href='#'>Contacts</a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class='content1'>
+            <div class=container>
+                <div id="proparallax">
+                    <img class="one" src="img/jocker.png" />
+                    <img class="two" src="img/harley.jpg" />
+                    <img class="three" src="img/jocker2.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class='content2'>
+            <div class='text_content2 wow animate__animated animate__fadeInTopLeft'>
+                <h1>News</h1>
+                <span id='c_left'>&#8592;</span>
+                <span id='c_right'>	&#8594;</span>
+            </div>
+            <div class='slider1'>
+                <div class='carousel'>
+                    <img class='pic1' src='img/jocker.png'><img class='pic2' src='img/harley.jpg'><img class='pic3' src='img/double.jpg'><img class='pic4' src='img/harley-quinn-joker-painting-artwork.jpg'>
+                </div>
+            </div>
+        </div>
+        <div class="content3">
+            <div class="content3">
+                <iframe width="1250" height="560" src="https://www.youtube.com/embed/UJYobpWUxqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="content4">
+            <div class="text_content4">
+                <h2>Keep up with the latest news!</h2>
+                <p>
+                    Subscribe and be the first,<br> who know about new events,<br> releases etc.
+                </p>
+            </div>
+            <div class='input_content4'>
+                <input type="email" placeholder="email">
+                <input type="button" value="Click">
+            </div>
+        </div>
+        <div class='content5'>
+            <div class='text_content2 wow animate__animated animate__fadeInTopLeft'>
+                <h1>News</h1>
+                <span>&#8592;</span>
+                <span>	&#8594;</span>
+            </div>
+            <div class='carousel'>
+                <img class='pic5' src='img/double.jpg'>
+                <img class='pic6' src='img/jocker.png'>
+                <img class='pic7' src='img/jocker.png'>
+                <img class='pic8' src='img/jocker.png'>
+            </div>
+        </div>
+        <div class="content4">
+            <div class="text_content4">
+                <h2>Write me to my email: marina51533@gmail.com</h2>
+                <p>
+                    „V životě se člověk učí nejdřív chodit a mluvit.<br> Později se pak učí sedět a držet hubu.“
+
+                </p>
+            </div>
+
+        </div>
+        <footer>
+            <h3>This site wad made for my daughter,<br> who fell in love with Jocker:))</h3>
+            <p>Copyright © 2020 Veškerý obsah webu (pokud není uvedeno jinak) je zakázáno kopírovat.</p>
+        </footer>
+    </main>
+
+
+
+
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+        var f = true
+        logo.onclick = function() {
+            //alert('Hello')
+
+            var a = document.querySelector('.navbar1')
+            var b = document.querySelector('.navbar2')
+            if (f) {
+                a.style.opacity = '0'
+                b.style.opacity = '1'
+                b.style.zIndex = '3'
+                f = false
+            } else {
+                a.style.opacity = '1'
+                b.style.opacity = '0'
+                b.style.zIndex = '0'
+                f = true
+
+            }
+
+
+
+        }
+    </script>
+    <script>
+        var n = 0
+        c_right.onclick = function() {
+            //alert('Hello')
+            let a = document.querySelector('.carousel')
+            n += -250
+            a.style.transform = 'translateX(' + n + 'px)'
+
+            console.log(n)
+            if (n == -750) {
+                n = 250
+            }
+        }
+        c_left.onclick = function() {
+            //alert('Hello')
+            let a = document.querySelector('.carousel')
+
+            if (n > 0 && n < -1000) {
+                n += 250
+            }
+            console.log(n)
+
+            a.style.transform = 'translateX(' + n + 'px)'
+
+        }
+    </script>
+    <!-- Загрузим наш React-компонент. -->
+    <script src="like_button.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='js/le.js'></script>
+    <script src='libs/wow.min.js'></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>
