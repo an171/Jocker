@@ -163,26 +163,22 @@
     </script>
     <script>
         var n = 0
+        var a = document.querySelector('.carousel')
         c_right.onclick = function() {
             //alert('Hello')
-            let a = document.querySelector('.carousel')
             n += -250
+            if (n == -1000) {
+                n = 0
+            }
             a.style.transform = 'translateX(' + n + 'px)'
-
             console.log(n)
-            if (n == -750) {
-                n = 250
-            }
         }
-        c_left.onclick = function() {
-            //alert('Hello')
-            let a = document.querySelector('.carousel')
-
-            if (n > 0 && n < -1000) {
-                n += 250
+        c_left.onclick = function() {            
+            n += 250
+            if (n == 250) {
+                n = -750
             }
-            console.log(n)
-
+            //console.log(n)
             a.style.transform = 'translateX(' + n + 'px)'
 
         }
